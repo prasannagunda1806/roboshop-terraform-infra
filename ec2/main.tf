@@ -9,11 +9,11 @@ resource "aws_instance" "ec2" {
   ami                     = data.aws_ami.ami.ami_id 
   instance_type           = [var.instance_type]
   vpc_security_group_ids  = var.sg_id
-}
- tags = {
+
+  tags = {
      Name = var.component
  }
- 
+} 
  variable "instance_type" {}
  variable "component" {}
  variable "sg_id" {}
