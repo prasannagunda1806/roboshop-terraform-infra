@@ -6,5 +6,5 @@ resource "aws_route53_record" "record" {
   records = [var.private_ip]
 }
 
-variale "component" {}
-variale "private_ip" {}
+variable "component" {}
+variable "private_ip" {}
