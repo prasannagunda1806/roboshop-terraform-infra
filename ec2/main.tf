@@ -20,8 +20,6 @@ resource "aws_instance" "ec2" {
  variable "component" {
      type = string
  }
- variable "sg_id" {
-  type= []
- }
+ variable "sg_id" {}
  
  
