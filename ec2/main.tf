@@ -14,8 +14,14 @@ resource "aws_instance" "ec2" {
      Name = var.component
  }
 } 
- variable "instance_type" {}
- variable "component" {}
- variable "sg_id" {}
+ variable "instance_type" {
+     type = string
+ }
+ variable "component" {
+     type = string
+ }
+ variable "sg_id" {
+     type = string
+ }
  
  
