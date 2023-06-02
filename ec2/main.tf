@@ -48,8 +48,6 @@ resource "null_resource" "provisioner" {
  }
  
  
-  output "provisioner" {
-     value = null_resource.provisioner.private_ip
- }
+ 
  
  
