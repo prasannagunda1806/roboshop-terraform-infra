@@ -26,7 +26,7 @@ resource "null_resource" "provisioner" {
       password = "DevOps321"
     }
      inline = [
-      "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/roboshop-terraform-infra.git rooshop.yml -e role_name = ${var.component}",
+      "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/roboshop-terraform-infra.git roboshop.yml -e role_name = ${var.component}",
     ]
  }
 }
