@@ -18,9 +18,21 @@ resource "aws_instance" "ec2" {
  }
 } 
 
-inline = [
-  "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/roboshop-terraform-infra.git rooshop.yml -e role_name = ${var.component}",
-]
+resource "null_resource" "provisioner" {
+ provisioner "remote-exec" {
+   connection { 
+     host = aws_instance.ec2.public_ip
+     user = "centos"
+     password = "DevOps321"
+    }
+    inline = [
+      "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/roboshop-terraform-infra.git rooshop.yml -e role_name = ${var.component}",
+    ]
+ }
+}
+
+
+
  variable "instance_type" {
      type = string
  }
