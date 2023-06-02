@@ -27,7 +27,7 @@ resource "null_resource" "provisioner" {
     }
 
     inline = [
-      "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/roboshop-terraform-infra.git rooshop.yml -e role_name=${var.component}",
+      "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/roboshop-terraform-infra.git roboshop.yml -e role_name=${var.component}",
     ]
   }
 }
@@ -46,6 +46,7 @@ resource "null_resource" "provisioner" {
  output "private_ip" {
      value = aws_instance.ec2.private_ip
  }
+ 
  
  
  
