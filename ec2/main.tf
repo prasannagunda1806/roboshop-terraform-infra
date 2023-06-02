@@ -4,7 +4,7 @@ data "aws_caller_identity" "current" {}
 data "aws_ami" "ami" {
  most_recent = true
  name_regex  = "Devops-practice-with-ansible"
- owners      = [aws_caller_identity.current.account_id]
+ owners      = [data.aws_caller_identity.current.account_id]
 }
 
 
