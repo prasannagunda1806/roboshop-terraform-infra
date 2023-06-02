@@ -1,7 +1,10 @@
+#below line is for ansile image
+data "aws_caller_identity" "current" {}
+
 data "aws_ami" "ami" {
  most_recent = true
- name_regex  = "Centos-8-DevOps-Practice"
- owners      = ["973714476881"]
+ name_regex  = "Devops-practice-with-ansible"
+ owners      = [aws_caller_identity.current.account_id]
 }
 
 
@@ -14,6 +17,10 @@ resource "aws_instance" "ec2" {
      Name = var.component
  }
 } 
+
+inline = [
+  ansible-pull -i localhost, -U https://github.com/prasannagunda1806/roboshop-terraform-infra.git rooshop.yml -e role_name = ${var.component}
+]
  variable "instance_type" {
      type = string
  }
