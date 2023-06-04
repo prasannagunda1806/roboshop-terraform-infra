@@ -1,7 +1,44 @@
-parameters = [
- {name: "dev.frontend.catalogue_url" ,value: "http://catalogue-dev.devopsprasanna1.store:8080/",type: "String"},
- {name: "dev.frontend.user_url" ,value: "http://user-dev.devopsprasanna1.store:8080/",type: "String"},
- {name: "dev.frontend.cart_url" ,value: "http://cart-dev.devopsprasanna1.store:8080/",type: "String"},
- {name: "dev.frontend.shipping_url" ,value: "http://shipping-dev.devopsprasanna1.store:8080/",type: "String"},
- {name: "dev.frontend.payment_url" ,value: "http://payment-dev.devopsprasanna1.store:8080/",type: "String"}
-] 
+instances = {
+   frontend = {
+    name = "frontend"
+    type = "t3.micro"
+    }
+   catalogue = {
+    name = "catalogue"
+    type = "t3.micro"
+    }
+    mongodb = {
+    name = "mongodb"
+    type = "t3.micro"
+    }
+    user = {
+    name = "user"
+    type = "t3.micro"
+    }
+    redis = {
+    name = "redis"
+    type = "t3.micro"
+    }
+    cart = {
+    name = "cart"
+    type = "t3.micro"
+    }
+    mysql = {
+    name = "mysql"
+    type = "t3.micro"
+    }
+    rabbitmq = {
+    name = "rabbitmq"
+    type = "t3.micro"
+    }
+    shipping = {
+    name = "shipping"
+    type = "t3.micro"
+    }
+    payment = {
+    name = "payment"
+    type = "t3.micro"
+    }
+  }    
+  
+  env = "dev"

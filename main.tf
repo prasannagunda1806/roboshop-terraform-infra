@@ -4,6 +4,7 @@ module "ec2" {
     instance_type = each.value["type"]
     component = each.value["name"]
     sg_id = module.sg.sg_id
+    env = var.env
 }
 
 module "sg" {
