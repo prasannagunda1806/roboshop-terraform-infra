@@ -1,3 +1,3 @@
 parameters = [
- {name: "sony" ,value: "sony manchidi",type: "string"}
+ {name: "sony" ,value: "sony manchidi",type: "String"}
 ] 
