@@ -18,19 +18,19 @@ resource "aws_instance" "ec2" {
  }
 } 
 
- resource "null_resource" "provisioner" {
-  provisioner "remote-exec" {
-     connection {
-       host     = aws_instance.ec2.public_ip
-       user     = "centos"
-       password = "DevOps321"
-     }
+ # resource "null_resource" "provisioner" {
+ #  provisioner "remote-exec" {
+ #     connection {
+ #       host     = aws_instance.ec2.public_ip
+ #       user     = "centos"
+ #       password = "DevOps321"
+ #     }
 
-     inline = [
-       "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/learn-ansible.git roboshop.yml -e role_name=${var.component}",
-     ]
-   }
- }
+ #     inline = [
+ #       "ansible-pull -i localhost, -U https://github.com/prasannagunda1806/learn-ansible.git roboshop.yml -e role_name=${var.component}",
+ #     ]
+ #   }
+ # }
 
 
 
